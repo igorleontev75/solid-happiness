@@ -1,0 +1,21 @@
+    @Published var screens = [Screens]()
+    
+}
+
+enum Screens {
+    case screen2, screen3, screen4
+}
+
+
+struct SomeView2: View {
+    
+    @State var startAnimation = false
+    @EnvironmentObject var model: SomeModel
+    
+    var body: some View {
+        ZStack {
+            if startAnimation {
+                VStack {
+                    Spacer()
+                    Button("removeLast") {
+                        var transaction = Transaction()
